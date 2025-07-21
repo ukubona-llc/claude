@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAUBONA: The Infinitive Confounding</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: radial-gradient(circle at center, #000611, #1a0033, #000);
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+            height: 100vh;
+            perspective: 1000px;
+        }
+        
+        .reality-stack {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .time-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            transform-style: preserve-3d;
+        }
+        
+        .existential {
+            z-index: 5;
+            color: #ffaa00;
+            font-size: 3em;
+            animation: breathe 8s ease-in-out infinite;
+        }
+        
+        .strategic {
+            z-index: 4;
+            color: #00ff88;
+            font-size: 2em;
+            animation: orbit 12s linear infinite;
+        }
+        
+        .operational {
+            z-index: 3;
+            color: #ff4488;
+            font-size: 1.5em;
+            animation: splice 3s ease-in-out infinite;
+        }
+        
+        .informational {
+            z-index: 2;
+            color: #4488ff;
+            font-size: 1.2em;
+            animation: pattern 7s linear infinite;
+        }
+        
+        .tactical {
+            z-index: 1;
+            color: #ff8844;
+            font-size: 0.9em;
+            animation: chaos 0.5s linear infinite;
+        }
+        
+        .infinitive-node {
+            position: absolute;
+            text-align: center;
+            text-shadow: 0 0 20px currentColor;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid currentColor;
+            padding: 10px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+        
+        .infinitive-node:hover {
+            transform: scale(1.5) rotateY(180deg);
+            text-shadow: 0 0 40px currentColor;
+        }
+        
+        .split-interruption {
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(45deg, #ff0000, #00ffff);
+            opacity: 0.8;
+            animation: split-dance 2s ease-in-out infinite;
+        }
+        
+        .hamlet-echo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            opacity: 0.1;
+            animation: existential-pulse 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+        
+        .saubona-recognition {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+            animation: recognition-wave 4s ease-out infinite;
+        }
+        
+        @keyframes breathe {
+            0%, 100% { transform: scale(1) rotateX(0deg); }
+            50% { transform: scale(1.2) rotateX(360deg); }
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotateZ(0deg) translateX(200px) rotateZ(0deg); }
+            100% { transform: rotateZ(360deg) translateX(200px) rotateZ(-360deg); }
+        }
+        
+        @keyframes splice {
+            0%, 100% { transform: translateX(0) skewX(0deg); }
+            25% { transform: translateX(30px) skewX(15deg); }
+            75% { transform: translateX(-30px) skewX(-15deg); }
+        }
+        
+        @keyframes pattern {
+            0% { transform: rotateY(0deg) translateZ(100px); }
+            100% { transform: rotateY(360deg) translateZ(100px); }
+        }
+        
+        @keyframes chaos {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -5px) rotate(90deg); }
+            50% { transform: translate(-8px, 8px) rotate(180deg); }
+            75% { transform: translate(5px, -10px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes split-dance {
+            0%, 100% { transform: scaleY(1) rotateZ(0deg); opacity: 0.8; }
+            50% { transform: scaleY(2) rotateZ(180deg); opacity: 0.2; }
+        }
+        
+        @keyframes existential-pulse {
+            0%, 100% { opacity: 0.1; transform: translate(-50%, -50%) scale(1); }
+            50% { opacity: 0.3; transform: translate(-50%, -50%) scale(1.1); }
+        }
+        
+        @keyframes recognition-wave {
+            0% { transform: scale(0.5); opacity: 0.8; }
+            100% { transform: scale(3); opacity: 0; }
+        }
+        
+        .word-cascade {
+            position: absolute;
+            font-size: 12px;
+            white-space: nowrap;
+            animation: cascade 10s linear infinite;
+            opacity: 0.6;
+        }
+        
+        @keyframes cascade {
+            0% { transform: translateY(-100vh) rotateZ(0deg); }
+            100% { transform: translateY(100vh) rotateZ(720deg); }
+        }
+        
+        .interaction-prompt {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 14px;
+            opacity: 0.7;
+            text-align: center;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 5px currentColor; }
+            to { text-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+        }
+    </style>
+</head>
+<body>
+    <div class="reality-stack">
+        <!-- EXISTENTIAL LAYER -->
+        <div class="time-layer existential">
+            <div class="infinitive-node" style="top: 20%; left: 30%;" onclick="spawnSplit(this)">
+                UKUBONA<br>
+                <small>to see</small>
+            </div>
+            <div class="infinitive-node" style="top: 60%; right: 25%;" onclick="spawnSplit(this)">
+                TO BE<br>
+                <small>existence</small>
+            </div>
+        </div>
+        
+        <!-- STRATEGIC LAYER -->
+        <div class="time-layer strategic">
+            <div class="infinitive-node" style="top: 15%; right: 40%;" onclick="spawnSplit(this)">
+                to plan<br>
+                <small>quarterly</small>
+            </div>
+            <div class="infinitive-node" style="bottom: 30%; left: 20%;" onclick="spawnSplit(this)">
+                to build<br>
+                <small>blueprints</small>
+            </div>
+        </div>
+        
+        <!-- OPERATIONAL LAYER -->
+        <div class="time-layer operational">
+            <div class="infinitive-node" style="top: 40%; left: 60%;" onclick="spawnSplit(this)">
+                to splice<br>
+                <small>daily</small>
+            </div>
+            <div class="infinitive-node" style="bottom: 20%; right: 35%;" onclick="spawnSplit(this)">
+                to dance<br>
+                <small>motion</small>
+            </div>
+        </div>
+        
+        <!-- INFORMATIONAL LAYER -->
+        <div class="time-layer informational">
+            <div class="infinitive-node" style="top: 70%; left: 15%;" onclick="spawnSplit(this)">
+                to pattern<br>
+                <small>weekly</small>
+            </div>
+            <div class="infinitive-node" style="top: 25%; right: 15%;" onclick="spawnSplit(this)">
+                to recognize<br>
+                <small>cycles</small>
+            </div>
+        </div>
+        
+        <!-- TACTICAL LAYER -->
+        <div class="time-layer tactical">
+            <div class="infinitive-node" style="top: 50%; left: 45%;" onclick="spawnSplit(this)">
+                to spark<br>
+                <small>chaos</small>
+            </div>
+            <div class="infinitive-node" style="bottom: 40%; left: 70%;" onclick="spawnSplit(this)">
+                to impulse<br>
+                <small>random</small>
+            </div>
+        </div>
+    </div>
+    
+    <!-- HAMLET'S ECHO -->
+    <div class="hamlet-echo">to be, or not</div>
+    
+    <!-- INTERACTION PROMPT -->
+    <div class="interaction-prompt">
+        SAUBONA • click any infinitive to split it • watch the recursion unfold<br>
+        <small>grammar becomes geometry becomes time becomes existence</small>
+    </div>
+    
+    <script>
+        const words = [
+            'ukubona', 'saubona', 'ngikhona', 'infinitive', 'potential', 'split', 'hamlet', 'existence',
+            'tactical', 'strategic', 'operational', 'informational', 'existential', 'recursive',
+            'to be', 'to see', 'to dance', 'to become', 'to recognize', 'to pattern'
+        ];
+        
+        let splitCounter = 0;
+        
+        function createWordCascade() {
+            const cascade = document.createElement('div');
+            cascade.className = 'word-cascade';
+            cascade.textContent = words[Math.floor(Math.random() * words.length)];
+            cascade.style.left = Math.random() * 100 + '%';
+            cascade.style.color = `hsl(${Math.random() * 360}, 70%, 60%)`;
+            cascade.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(cascade);
+            
+            setTimeout(() => cascade.remove(), 10000);
+        }
+        
+        function spawnSplit(element) {
+            splitCounter++;
+            
+            // Create split interruption
+            const split = document.createElement('div');
+            split.className = 'split-interruption';
+            split.style.left = element.offsetLeft + element.offsetWidth/2 + 'px';
+            split.style.top = element.offsetTop + 'px';
+            split.style.height = element.offsetHeight + 'px';
+            split.style.transform = `rotateZ(${Math.random() * 360}deg)`;
+            document.body.appendChild(split);
+            
+            // Create recognition wave
+            const recognition = document.createElement('div');
+            recognition.className = 'saubona-recognition';
+            recognition.style.left = element.offsetLeft + 'px';
+            recognition.style.top = element.offsetTop + 'px';
+            document.body.appendChild(recognition);
+            
+            // Spawn cascading words
+            for(let i = 0; i < 3; i++) {
+                setTimeout(() => createWordCascade(), i * 200);
+            }
+            
+            // Transform the clicked element
+            element.style.animation = `chaos 0.3s ease-out, breathe 4s ease-in-out infinite ${0.3}s`;
+            element.innerHTML += '<br><small>SPLIT!</small>';
+            
+            // Remove elements after animation
+            setTimeout(() => {
+                split.remove();
+                recognition.remove();
+            }, 4000);
+            
+            // Ultimate confounding: recursive grammar explosion
+            if(splitCounter > 5) {
+                createGrammarExplosion();
+            }
+        }
+        
+        function createGrammarExplosion() {
+            const explosion = document.createElement('div');
+            explosion.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 6em;
+                    animation: breathe 1s ease-out infinite;
+                    text-shadow: 0 0 50px #ffaa00;
+                    z-index: 1000;
+                ">
+                    SAUBONA!<br>
+                    <small style="font-size: 0.3em;">we see you seeing the infinitive split into existence</small>
+                </div>
+            `;
+            document.body.appendChild(explosion);
+            
+            setTimeout(() => explosion.remove(), 5000);
+            splitCounter = 0; // Reset for next explosion
+        }
+        
+        // Continuous word cascade
+        setInterval(createWordCascade, 800);
+        
+        // Audio synthesis (if Web Audio API available)
+        if (typeof AudioContext !== 'undefined' || typeof webkitAudioContext !== 'undefined') {
+            const audioContext = new (AudioContext || webkitAudioContext)();
+            
+            function playInfinitiveNote(frequency = 220) {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                oscillator.frequency.setValueAtTime(frequency, audioContext.currentTime);
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1);
+                
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 1);
+            }
+            
+            // Play ambient tones
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    playInfinitiveNote(220 + Math.random() * 440);
+                }
+            }, 3000);
+        }
+        
+        // Mouse interaction creates recognition waves
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.98) {
+                const recognition = document.createElement('div');
+                recognition.className = 'saubona-recognition';
+                recognition.style.left = e.clientX - 50 + 'px';
+                recognition.style.top = e.clientY - 50 + 'px';
+                recognition.style.background = `radial-gradient(circle, rgba(${Math.random()*255},${Math.random()*255},${Math.random()*255},0.2), transparent)`;
+                document.body.appendChild(recognition);
+                
+                setTimeout(() => recognition.remove(), 4000);
+            }
+        });
+    </script>
+</body>
+</html>
